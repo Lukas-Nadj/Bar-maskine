@@ -6,6 +6,7 @@ int ballsTime  = 0;
 Byte state = 0;
 int idletime = 0;
 Boolean hælder = false;
+PImage[] drinks = new PImage[14];
 void setup() {
   size(1366, 768);
   frameRate(60);
@@ -13,9 +14,13 @@ void setup() {
   Vælgdrink = loadImage("Vælg drink.png");
   information = loadImage("Mere information.png");
   Balls=(width-97)/(frameRate*60);
+  for (int d = 0;d<drinks.length;d++){
+   drinks[d] = loadImage("drink"+d+".png");
+  }
 }
 
 void draw() {
+ printArray(drinks);
   println(ballsTime);
   ballsTime += 1;
   if(ballsTime>60*frameRate){
