@@ -11,7 +11,7 @@ void setup(){
   Vælgdrink = loadImage("Vælg drink.png");
   information = loadImage("Mere information.png");
 
-
+}
 
 void draw(){
   idletime += 1;
