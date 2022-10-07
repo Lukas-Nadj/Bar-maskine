@@ -20,8 +20,8 @@ void setup() {
   }
 }
 void draw() {
-  printArray(drinks);
-  println(ballsTime);
+ // printArray(drinks);
+  //println(ballsTime);
   ballsTime += 1;
   if (ballsTime>60*frameRate) {
     ballsTime = 0;
@@ -37,23 +37,25 @@ void draw() {
   } else if (state == 1) {
     image(Vælgdrink, 0, 0);
 
-  for (int m = 0; m < 14; m ++) {
-    ellipse (m*97+45, 59, 60, 60);
-    imageMode(CENTER);
-    image(drinks[m], m*97+45, 59);
-    imageMode(CORNER);
-  }
-  
-  
-  
-    for (int i = 0; i < 14; i ++) {
-    ellipse (i*400-130, 360, 360, 360);
-    imageMode(CENTER);
-    image(drinks[i], i*400-130, 360);
-    imageMode(CORNER);
+    for (int m = 0; m < 14; m ++) {
+      ellipse (m*97+45, 59, 60, 60);
+      imageMode(CENTER);
+      image(drinks[m], m*97+45, 59);
+      imageMode(CORNER);
     }
 
 
+
+    for (int v = 0; v < 14; v ++) {
+      ellipse (v*400-130, 360, 360, 360);
+      imageMode(CENTER);
+      image(drinks[v], v*400-130, 360);
+      imageMode(CORNER);
+    }
+    noStroke();
+    rect(0,186,80,354);
+     rect(1260,186,106,383);
+     stroke(0);
   } else if (state == 2) {
     image(information, 0, 0);
   } else {
@@ -66,6 +68,14 @@ void mousePressed() {
   }
   if (state==0&&mouseX>564&&mouseX<564+249&&mouseY>575&&mouseY<575+78) {
     state = 1;
+  } else if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416) {
+    int g = 0;
+    g = 1;
+    println(g);
+  } else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416) {
+    int p = 0;
+    p = 1;
+    println(p);
   } else if (state==1&&mouseX>417&&mouseX<417+228&&mouseY>625&&mouseY<625+96) {
     state = 0;
   } else if (state==1&&mouseX>708&&mouseX<708+228&&mouseY>625&&mouseY<625+96) {
