@@ -15,7 +15,10 @@ void setup() {
   information = loadImage("Mere information.png");
   Balls=(width-97)/(frameRate*60);
   for (int d = 0;d<drinks.length;d++){
-   drinks[d] = loadImage("drink"+d+".png");
+    
+   drinks[d]= loadImage("drink"+d+".png");
+   drinks[d].resize(40,30);
+   
   }
 }
 
@@ -47,6 +50,10 @@ void draw() {
 
     ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
   }
+    ellipse(300,500,60,60);
+    imageMode(CENTER);
+image(drinks[0],300,500);
+imageMode(CORNER);
 }
 
 void mousePressed() {
