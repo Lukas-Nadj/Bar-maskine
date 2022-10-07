@@ -19,7 +19,6 @@ void setup() {
     drinks[d].resize(40, 40);
   }
 }
-
 void draw() {
   printArray(drinks);
   println(ballsTime);
@@ -33,36 +32,38 @@ void draw() {
     state = 0;
     idletime = 0;
   }
-  //println(idletime);
   if (state == 0) {
-    image(Forside, 0, 0);
-    byte c = 0;
-  for (int i = 0; i < 28; i ++) {
-    c += 1;
-    if(c==13){
-    c = 0;
-    }
-
-    ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
-    imageMode(CENTER);
-    image(drinks[c], i*97+ballsTime*(-Balls), 700);
-    imageMode(CORNER);
-  }
+    forside();
   } else if (state == 1) {
     image(Vælgdrink, 0, 0);
+
+  for (int m = 0; m < 14; m ++) {
+    ellipse (m*97+45, 59, 60, 60);
+    imageMode(CENTER);
+    image(drinks[m], m*97+45, 59);
+    imageMode(CORNER);
+  }
+  
+  
+  
+    for (int i = 0; i < 14; i ++) {
+    ellipse (i*400-130, 360, 360, 360);
+    imageMode(CENTER);
+    image(drinks[i], i*400-130, 360);
+    imageMode(CORNER);
+    }
+
+
   } else if (state == 2) {
     image(information, 0, 0);
   } else {
   }
-  
 }
-
 void mousePressed() {
   idletime = 0;
   if (hælder) {
     return;
   }
-
   if (state==0&&mouseX>564&&mouseX<564+249&&mouseY>575&&mouseY<575+78) {
     state = 1;
   } else if (state==1&&mouseX>417&&mouseX<417+228&&mouseY>625&&mouseY<625+96) {
