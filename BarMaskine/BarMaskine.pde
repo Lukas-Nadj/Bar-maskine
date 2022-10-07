@@ -14,19 +14,17 @@ void setup() {
   Vælgdrink = loadImage("Vælg drink.png");
   information = loadImage("Mere information.png");
   Balls=(width-97)/(frameRate*60);
-  for (int d = 0;d<drinks.length;d++){
-    
-   drinks[d]= loadImage("drink"+d+".png");
-   drinks[d].resize(40,30);
-   
+  for (int d = 0; d<drinks.length; d++) {
+    drinks[d]= loadImage("drink"+d+".png");
+    drinks[d].resize(40, 40);
   }
 }
 
 void draw() {
- printArray(drinks);
+  printArray(drinks);
   println(ballsTime);
   ballsTime += 1;
-  if(ballsTime>60*frameRate){
+  if (ballsTime>60*frameRate) {
     ballsTime = 0;
     println("done");
   }
@@ -38,22 +36,25 @@ void draw() {
   //println(idletime);
   if (state == 0) {
     image(Forside, 0, 0);
+    byte c = 0;
+  for (int i = 0; i < 28; i ++) {
+    c += 1;
+    if(c==13){
+    c = 0;
+    }
+
+    ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
+    imageMode(CENTER);
+    image(drinks[c], i*97+ballsTime*(-Balls), 700);
+    imageMode(CORNER);
+  }
   } else if (state == 1) {
     image(Vælgdrink, 0, 0);
   } else if (state == 2) {
     image(information, 0, 0);
   } else {
   }
-
-  for (int i = 0; i < 28; i ++) {
-
-
-    ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
-  }
-    ellipse(300,500,60,60);
-    imageMode(CENTER);
-image(drinks[0],300,500);
-imageMode(CORNER);
+  
 }
 
 void mousePressed() {
