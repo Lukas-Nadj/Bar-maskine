@@ -16,3 +16,26 @@ Titel[11] = "Drink 12";
 Titel[12] = "Drink 13";
 Titel[13] = "Drink 14";
 }
+
+void mereinfo(){
+  image(information, 0, 0);
+
+
+    int e = 2;
+
+
+
+    imageMode(CENTER);
+    image(bigdrinks[e], 419, 384.5);
+    imageMode(CORNER);
+
+    fill(0);
+    textSize(50);
+    textAlign(CENTER);
+    text(Titel[e], 838, 105, 405, 91);
+
+    textSize(20);
+    textAlign(LEFT, BOTTOM);
+    text(a, 838, 219, 405, 315);
+    fill(255);
+}
