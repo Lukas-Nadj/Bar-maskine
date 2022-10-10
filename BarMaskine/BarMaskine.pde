@@ -10,6 +10,7 @@ PImage[] drinks = new PImage[14];
 PImage[] smalldrinks = new PImage[14];
 PImage[] bigdrinks = new PImage[14];
 
+int index = 7;
 
 String a = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet fringilla augue. Donec rutrum bibendum sapien et rhoncus. Quisque vel lorem in massa iaculis rhoncus ac at orci. Phasellus elit augue, mollis et elementum vel, sodales vel magna. Phasellus vehicula porta mi, pellentesque cursus libero pretium eu. Etiam placerat lectus at congue viverra. Aliquam erat volutpat. Suspendisse eget faucibus erat, vel sodales arcu. In sit amet ex ac leo ultrices porttitor. Cras est massa, feugiat ut sagittis et, suscipit sit amet lectus. Vivamus in semper sapien. Curabitur mi nisl, efficitur quis metus non, pharetra facilisis ipsum. Etiam pretium ante in vehicula luctus. Donec vitae tristique odio. Mauris urna felis, vulputate at nibh id, aliquam vulputate massa.";
 String t = "Martini";
@@ -37,7 +38,7 @@ void setup() {
   load();
 }
 void draw() {
-
+  background(0);
   //printArray(drinks);
   //println(ballsTime);
   // println(frameRate);
@@ -81,37 +82,22 @@ void draw() {
     }
 
 
+    ellipse (400-130, 360, 360, 360);
+    ellipse (800-130, 360, 360, 360);
+    ellipse (1200-130, 360, 360, 360);
+    imageMode(CENTER);
 
     for (int v = 0; v < 14; v ++) {
-      ellipse (400-130, 360, 360, 360);
-      ellipse (800-130, 360, 360, 360);
-      ellipse (1200-130, 360, 360, 360);
-      imageMode(CENTER);
-      image(smalldrinks[v], v*400-130, 360);
-      imageMode(CORNER);
-      println(t);
-      if (mouseX>868&&mouseY>171&&mouseY<171+416&&mousePressed) {
-        v*=2;
-      } else if (mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
-        v*=3;
-      }
+      image(bigdrinks[v], v*400-130-index*400, 360);
     }
+    imageMode(CORNER);
 
-  
+
+
+
     noStroke();
-    rect(0, 186, 80, 354);
-    rect(1260, 186, 106, 383);
-    stroke(0);
-    
-    for (int i = 0; i < 14; i ++) {
-      ellipse (i*400-130, 360, 360, 360);
-      imageMode(CENTER);
-      image(smalldrinks[i], i*400-130, 360);
-      imageMode(CORNER);
-    }
-    noStroke();
-    rect(0, 186, 80, 354);
-    rect(1260, 186, 106, 383);
+    rect(0, 90, 80, height);
+    rect(1260, 90, 106, height);
     stroke(0);
   } else if (state == 2) {
     image(information, 0, 0);
@@ -119,22 +105,21 @@ void draw() {
 
     int e = 2;
 
- 
 
-      imageMode(CENTER);
-      image(bigdrinks[e], 419, 384.5);
-      imageMode(CORNER);
 
-      fill(0);
-      textSize(50);
-      textAlign(CENTER);
-      text(Titel[e], 838, 105, 405, 91);
+    imageMode(CENTER);
+    image(bigdrinks[e], 419, 384.5);
+    imageMode(CORNER);
 
-      textSize(20);
-      textAlign(LEFT, BOTTOM);
-      text(a, 838, 219, 405, 315);
-      fill(255);
-    
+    fill(0);
+    textSize(50);
+    textAlign(CENTER);
+    text(Titel[e], 838, 105, 405, 91);
+
+    textSize(20);
+    textAlign(LEFT, BOTTOM);
+    text(a, 838, 219, 405, 315);
+    fill(255);
   } else {
   }
 }
@@ -144,6 +129,16 @@ void mousePressed() {
   if (hælder) {
     return;
   }
+
+  if (mouseX>width-489&&mouseY>171&&mouseY<171+416&&mousePressed) {
+    index+=1;
+    println(index);
+  } else if (mouseX<489&&mouseY>171&&mouseY<171+416&&mousePressed) {
+    index-=1;
+    println(index);
+  }
+
+
   if (state==0&&mouseX>564&&mouseX<564+249&&mouseY>575&&mouseY<575+78) {
     state = 1;
     /*  } else if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416) {
