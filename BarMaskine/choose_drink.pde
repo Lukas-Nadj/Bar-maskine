@@ -18,17 +18,17 @@ void vælgdrink() {
   }
 
 
-if (index<=10&&index>=-1){
+  if (index<=10&&index>=-1) {
     ellipse (400-130, 360, 360, 360);
     ellipse (800-130, 360, 360, 360);
     ellipse (1200-130, 360, 360, 360);
-} else if (index==11){
+  } else if (index==11) {
     ellipse (400-130, 360, 360, 360);
     ellipse (800-130, 360, 360, 360);
-}else if (index==-2){
-   ellipse (800-130, 360, 360, 360);
+  } else if (index==-2) {
+    ellipse (800-130, 360, 360, 360);
     ellipse (1200-130, 360, 360, 360);
-}
+  }
   imageMode(CENTER);
 
   for (int v = 0; v < 14; v ++) {
@@ -43,4 +43,8 @@ if (index<=10&&index>=-1){
   rect(0, 90, 80, height);
   rect(1260, 90, 106, height);
   stroke(0);
+
+
+  image(RPil, 1304, 315);
+  image(LPil, 20, 315);
 }

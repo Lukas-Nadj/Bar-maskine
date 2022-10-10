@@ -1,6 +1,7 @@
 PImage Forside;
 PImage Vælgdrink;
 PImage information;
+PImage LPil,RPil;
 float Balls;
 int ballsTime  = 0;
 Byte state = 0;
@@ -21,6 +22,8 @@ void setup() {
   Forside = loadImage("Forside.png");
   Vælgdrink = loadImage("Vælg drink.png");
   information = loadImage("Mere information.png");
+  RPil = loadImage("RightArrow.png");
+  LPil = loadImage("LeftArrow.png");
   Balls=(width-97)/(frameRate*60);
   for (int d=0; d<drinks.length; d++) {
     drinks[d]= loadImage("data/"+"drink"+d+".png");
