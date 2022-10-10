@@ -25,10 +25,7 @@ if (index<=10&&index>=-1){
     ellipse (1200-130, 360, 360, 360);
 }
     imageMode(CENTER);
-
-    for (int v = 0; v < 14; v ++) {
-      image(bigdrinks[v], v*400-130-index*400, 360);
-    }
+    image(smalldrinks[m], m*97+45, 59);
     imageMode(CORNER);
   }
 
