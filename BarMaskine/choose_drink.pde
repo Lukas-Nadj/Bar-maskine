@@ -8,10 +8,17 @@ void vælgdrink(){
       imageMode(CORNER);
     }
 
-
+if (index<=10&&index>=-1){
     ellipse (400-130, 360, 360, 360);
     ellipse (800-130, 360, 360, 360);
     ellipse (1200-130, 360, 360, 360);
+} else if (index==11){
+    ellipse (400-130, 360, 360, 360);
+    ellipse (800-130, 360, 360, 360);
+}else if (index==-2){
+   ellipse (800-130, 360, 360, 360);
+    ellipse (1200-130, 360, 360, 360);
+}
     imageMode(CENTER);
 
     for (int v = 0; v < 14; v ++) {

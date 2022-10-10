@@ -23,13 +23,13 @@ void setup() {
   information = loadImage("Mere information.png");
   Balls=(width-97)/(frameRate*60);
   for (int d=0; d<drinks.length; d++) {
-    drinks[d]= loadImage("data/"+"drink"+d+".png");
+    drinks[d]= loadImage("drink"+d+".png");
   }
 
   for (int d=0; d<drinks.length; d++) {
-    bigdrinks[d] = loadImage("data/"+"drink"+d+".png");
+    bigdrinks[d] = loadImage("drink"+d+".png");
     bigdrinks[d].resize(359, 541);
-    smalldrinks[d] = loadImage("data/"+"drink"+d+".png");
+    smalldrinks[d] = loadImage("drink"+d+".png");
     smalldrinks[d].resize(40, 40);
   }
 
@@ -39,7 +39,9 @@ void setup() {
 }
 void draw() {
   background(0);
-
+  //printArray(drinks);
+  //println(ballsTime);
+  // println(frameRate);
   ballsTime += 1;
   if (ballsTime>60*frameRate) {
     ballsTime = 0;
@@ -50,13 +52,75 @@ void draw() {
     state = 0;
     idletime = 0;
   }
+  //println(idletime);
+
 
   if (state == 0) {
-    forside();
+    image(Forside, 0, 0);
+    byte c = 0;
+    for (int i = 0; i < 28; i ++) {
+      c += 1;
+      if (c==13) {
+        c = 0;
+      }
+
+
+
+      ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
+      imageMode(CENTER);
+      image(smalldrinks[c], i*97+ballsTime*(-Balls), 700);
+      imageMode(CORNER);
+    }
   } else if (state == 1) {
-    vælgdrink();
+    image(Vælgdrink, 0, 0);
+
+    for (int m = 0; m < 14; m ++) {
+      ellipse (m*97+45, 59, 60, 60);
+      imageMode(CENTER);
+      image(smalldrinks[m], m*97+45, 59);
+      imageMode(CORNER);
+    }
+
+
+    ellipse (400-130, 360, 360, 360);
+    ellipse (800-130, 360, 360, 360);
+    ellipse (1200-130, 360, 360, 360);
+    imageMode(CENTER);
+
+    for (int v = 0; v < 14; v ++) {
+      image(bigdrinks[v], v*400-130-index*400, 360);
+    }
+    imageMode(CORNER);
+
+
+
+
+    noStroke();
+    rect(0, 90, 80, height);
+    rect(1260, 90, 106, height);
+    stroke(0);
   } else if (state == 2) {
-    mereinfo();
+    image(information, 0, 0);
+
+
+    int e = 2;
+
+
+
+    imageMode(CENTER);
+    image(bigdrinks[e], 419, 384.5);
+    imageMode(CORNER);
+
+    fill(0);
+    textSize(50);
+    textAlign(CENTER);
+    text(Titel[e], 838, 105, 405, 91);
+
+    textSize(20);
+    textAlign(LEFT, BOTTOM);
+    text(a, 838, 219, 405, 315);
+    fill(255);
+  } else {
   }
 }
 
