@@ -35,7 +35,7 @@ void draw() {
 
   //printArray(drinks);
   //println(ballsTime);
-  println(frameRate);
+ // println(frameRate);
   ballsTime += 1;
   if (ballsTime>60*frameRate) {
     ballsTime = 0;
@@ -59,6 +59,7 @@ void draw() {
       }
 
 
+
       ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
       imageMode(CENTER);
       image(drinks[c], i*97+ballsTime*(-Balls), 700);
@@ -77,10 +78,17 @@ void draw() {
 
 
     for (int v = 0; v < 14; v ++) {
+
       ellipse (v*400-130, 360, 360, 360);
       imageMode(CENTER);
       image(drinks[v], v*400-130, 360);
       imageMode(CORNER);
+      if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416&&mousePressed) {
+        v+=1;
+      }
+      else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
+   v-=1;
+    }
     }
     noStroke();
     rect(0,186,80,354);
@@ -92,6 +100,11 @@ void draw() {
       image(drinks[i], i*400-130, 360);
       imageMode(CORNER);
     }
+
+    rect(0, 186, 80, 354);
+    rect(1260, 186, 106, 383);
+    stroke(0);
+
   } else if (state == 2) {
     image(information, 0, 0);
 
