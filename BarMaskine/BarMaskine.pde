@@ -66,10 +66,10 @@ void mousePressed() {
     return;
   }
 
-  if (mouseX>width-489&&mouseY>171&&mouseY<171+416&&mousePressed) {
+  if (index!=11&&mouseX>width-489&&mouseY>171&&mouseY<171+416&&mousePressed) {
     index+=1;
     println(index);
-  } else if (mouseX<489&&mouseY>171&&mouseY<171+416&&mousePressed) {
+  } else if (index!=-2&&mouseX<489&&mouseY>171&&mouseY<171+416&&mousePressed) {
     index-=1;
     println(index);
   }
