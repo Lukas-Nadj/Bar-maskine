@@ -119,7 +119,7 @@ void draw() {
 
     int e = 2;
 
-    if (e==2) {
+ 
 
       imageMode(CENTER);
       image(bigdrinks[e], 419, 384.5);
@@ -134,7 +134,7 @@ void draw() {
       textAlign(LEFT, BOTTOM);
       text(a, 838, 219, 405, 315);
       fill(255);
-    }
+    
   } else {
   }
 }
