@@ -35,7 +35,7 @@ void draw() {
 
   //printArray(drinks);
   //println(ballsTime);
- // println(frameRate);
+  // println(frameRate);
   ballsTime += 1;
   if (ballsTime>60*frameRate) {
     ballsTime = 0;
@@ -78,33 +78,30 @@ void draw() {
 
 
     for (int v = 0; v < 14; v ++) {
-
-      ellipse (v*400-130, 360, 360, 360);
+      ellipse (400-130, 360, 360, 360);
+      ellipse (800-130, 360, 360, 360);
+      ellipse (1200-130, 360, 360, 360);
       imageMode(CENTER);
       image(drinks[v], v*400-130, 360);
       imageMode(CORNER);
-      if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416&&mousePressed) {
-        v+=1;
+      println(t);
+      if (mouseX>868&&mouseY>171&&mouseY<171+416&&mousePressed) {
+        v*=2;
+      } else if (mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
+        v*=3;
       }
-      else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
-   v-=1;
     }
-    }
-    noStroke();
-    rect(0,186,80,354);
-     rect(1260,186,106,383);
-     stroke(0);
+
     for (int i = 0; i < 14; i ++) {
       ellipse (i*400-130, 360, 360, 360);
       imageMode(CENTER);
       image(drinks[i], i*400-130, 360);
       imageMode(CORNER);
     }
-
+    noStroke();
     rect(0, 186, 80, 354);
     rect(1260, 186, 106, 383);
     stroke(0);
-
   } else if (state == 2) {
     image(information, 0, 0);
 
@@ -138,14 +135,14 @@ void mousePressed() {
   }
   if (state==0&&mouseX>564&&mouseX<564+249&&mouseY>575&&mouseY<575+78) {
     state = 1;
-  } else if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416) {
-    int g = 0;
-    g = 1;
-    println(g);
-  } else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416) {
-    int p = 0;
-    p = 1;
-    println(p);
+    /*  } else if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416) {
+     int g = 0;
+     g = 1;
+     println(g);
+     } else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416) {
+     int p = 0;
+     p = 1;
+     println(p);*/
   } else if (state==1&&mouseX>417&&mouseX<417+228&&mouseY>625&&mouseY<625+96) {
     state = 0;
   } else if (state==1&&mouseX>708&&mouseX<708+228&&mouseY>625&&mouseY<625+96) {
