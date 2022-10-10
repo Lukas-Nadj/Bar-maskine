@@ -7,6 +7,7 @@ Byte state = 0;
 int idletime = 0;
 Boolean hælder = false;
 PImage[] drinks = new PImage[14];
+PImage[] smalldrinks = new PImage[14];
 PImage[] bigdrinks = new PImage[14];
 
 
@@ -22,9 +23,13 @@ void setup() {
   Balls=(width-97)/(frameRate*60);
   for (int d=0; d<drinks.length; d++) {
     drinks[d]= loadImage("drink"+d+".png");
-    drinks[d].resize(359, 541);
-    bigdrinks[d] = drinks[d];
-    drinks[d].resize(40, 40);
+  }
+
+  for (int d=0; d<drinks.length; d++) {
+    bigdrinks[d] = loadImage("drink"+d+".png");
+    bigdrinks[d].resize(359, 541);
+    smalldrinks[d] = loadImage("drink"+d+".png");
+    smalldrinks[d].resize(40, 40);
   }
 
 
@@ -35,7 +40,7 @@ void draw() {
 
   //printArray(drinks);
   //println(ballsTime);
- // println(frameRate);
+  // println(frameRate);
   ballsTime += 1;
   if (ballsTime>60*frameRate) {
     ballsTime = 0;
@@ -62,7 +67,7 @@ void draw() {
 
       ellipse (i*97+ballsTime*(-Balls), 700, 60, 60);
       imageMode(CENTER);
-      image(drinks[c], i*97+ballsTime*(-Balls), 700);
+      image(smalldrinks[c], i*97+ballsTime*(-Balls), 700);
       imageMode(CORNER);
     }
   } else if (state == 1) {
@@ -71,7 +76,7 @@ void draw() {
     for (int m = 0; m < 14; m ++) {
       ellipse (m*97+45, 59, 60, 60);
       imageMode(CENTER);
-      image(drinks[m], m*97+45, 59);
+      image(smalldrinks[m], m*97+45, 59);
       imageMode(CORNER);
     }
 
@@ -81,30 +86,28 @@ void draw() {
 
       ellipse (v*400-130, 360, 360, 360);
       imageMode(CENTER);
-      image(drinks[v], v*400-130, 360);
+      image(smalldrinks[v], v*400-130, 360);
       imageMode(CORNER);
       if (state==1&&mouseX>868&&mouseY>171&&mouseY<171+416&&mousePressed) {
         v+=1;
+      } else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
+        v-=1;
       }
-      else if (state==1&&mouseX<4948&&mouseY>171&&mouseY<171+416&&mousePressed) {
-   v-=1;
-    }
     }
     noStroke();
-    rect(0,186,80,354);
-     rect(1260,186,106,383);
-     stroke(0);
+    rect(0, 186, 80, 354);
+    rect(1260, 186, 106, 383);
+    stroke(0);
     for (int i = 0; i < 14; i ++) {
       ellipse (i*400-130, 360, 360, 360);
       imageMode(CENTER);
-      image(drinks[i], i*400-130, 360);
+      image(smalldrinks[i], i*400-130, 360);
       imageMode(CORNER);
     }
 
     rect(0, 186, 80, 354);
     rect(1260, 186, 106, 383);
     stroke(0);
-
   } else if (state == 2) {
     image(information, 0, 0);
 
@@ -114,7 +117,7 @@ void draw() {
     if (e==2) {
 
       imageMode(CENTER);
-      image(drinks[e], 419, 384.5);
+      image(bigdrinks[e], 419, 384.5);
       imageMode(CORNER);
 
       fill(0);
