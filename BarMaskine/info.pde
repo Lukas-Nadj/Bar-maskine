@@ -19,20 +19,15 @@ Titel[13] = "Drink 14";
 
 void mereinfo(){
   image(information, 0, 0);
-
-
-    int e = 2;
-
-
-
+  
     imageMode(CENTER);
-    image(bigdrinks[e], 419, 384.5);
+    image(bigdrinks[index+2], 419, 384.5);
     imageMode(CORNER);
 
     fill(0);
     textSize(50);
     textAlign(CENTER);
-    text(Titel[e], 838, 105, 405, 91);
+    text(Titel[index+2], 838, 105, 405, 91);
 
     textSize(20);
     textAlign(LEFT, BOTTOM);
