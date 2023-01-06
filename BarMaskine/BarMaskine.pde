@@ -9,8 +9,9 @@ int idletime = 0;
 Boolean hælder = false;
 PImage[] smalldrinks = new PImage[14];
 PImage[] bigdrinks = new PImage[14];
+int[][] drinks = new int[14][9];
 
-//bestemmer hvilken drink vi kigger på
+//bestemmer hvilken drink vi kigger påre
 int index = 4;
 
 String a = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet fringilla augue. Donec rutrum bibendum sapien et rhoncus. Quisque vel lorem in massa iaculis rhoncus ac at orci. Phasellus elit augue, mollis et elementum vel, sodales vel magna. Phasellus vehicula porta mi, pellentesque cursus libero pretium eu. Etiam placerat lectus at congue viverra. Aliquam erat volutpat. Suspendisse eget faucibus erat, vel sodales arcu. In sit amet ex ac leo ultrices porttitor. Cras est massa, feugiat ut sagittis et, suscipit sit amet lectus. Vivamus in semper sapien. Curabitur mi nisl, efficitur quis metus non, pharetra facilisis ipsum. Etiam pretium ante in vehicula luctus. Donec vitae tristique odio. Mauris urna felis, vulputate at nibh id, aliquam vulputate massa.";
@@ -63,6 +64,7 @@ void draw() {
 }
 
 void mousePressed() {
+  println(index+2);
   //når man interragere med skærmen i hvilkensomhelst kapacitet genstarter vi vores timeout timer.
   idletime = 0;
   //return bryder ud af en funktion, hvilket er tilpassende når drinken hælder og vi ikke bruger en hælde-skærm
@@ -78,11 +80,15 @@ void mousePressed() {
     
     if (index!=11&&mouseX>width-489&&mouseY>171&&mouseY<171+416&&mousePressed) {
       //scroll til højre
+      if(index!=0){
       index+=1;
+      }
       println(index);
     } else if (index!=-2&&mouseX<489&&mouseY>171&&mouseY<171+416&&mousePressed) {
       //scroll til venstre
+      if(index!=13){
       index-=1;
+      }
       println(index);
     } else if (mouseX>417&&mouseX<417+228&&mouseY>625&&mouseY<625+96) {
       //tilbage til forside
@@ -99,9 +105,9 @@ void mousePressed() {
     } else if (mouseX>1050&&mouseX<1050+140&&mouseY>599&&mouseY<599+77&&!hælder) {
       //hæld drink
       hælder = true;
-      println("Hæld!");
-      delay(3000);
-      println("Færdig!");
+      println("vi hælder bitch: "+index+2);
+      printArray(drinks[index+2]);
+      loadStrings("http://10.113.9.124/STRING?M0="+str(drinks[index+2][0])+"&M1="+str(drinks[index+2][1])+"&M2="+str(drinks[index+2][2])+"&M3="+str(drinks[index+2][3])+"&M4="+str(drinks[index+2][4])+"&M5="+str(drinks[index+2][5])+"&M6="+str(drinks[index+2][6])+"&M7="+str(drinks[index+2][7])+"&M8="+str(drinks[index+2][8]));
       hælder = false;
     }
   }

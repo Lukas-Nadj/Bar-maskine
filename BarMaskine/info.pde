@@ -17,6 +17,21 @@ void load() {
   Titel[11] = "Drink 12";
   Titel[12] = "Drink 13";
   Titel[13] = "Drink 14";
+  
+  drinks[0] = new int[]{2, 4, 0, 0, 0, 0, 0, 0, 0};
+  drinks[1] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[2] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[3] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[4] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[5] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[6] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[7] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[8] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[9] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[10] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[11] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[12] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
+  drinks[13] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};  
 }
 
 void mereinfo() {
