@@ -16,7 +16,7 @@ void load() {
   Titel[10] = "Drink 11";
   Titel[11] = "Drink 12";
   Titel[12] = "Drink 13";
-  Titel[13] = "Drink 14";
+  Titel[13] = "clean that shit up";
   
   drinks[0] = new int[]{2, 4, 0, 0, 0, 0, 0, 0, 0};
   drinks[1] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
@@ -31,7 +31,8 @@ void load() {
   drinks[10] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
   drinks[11] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
   drinks[12] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[13] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};  
+  drinks[13] = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5};  
+
 }
 
 void mereinfo() {
