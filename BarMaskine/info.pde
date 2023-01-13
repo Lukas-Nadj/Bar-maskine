@@ -3,35 +3,35 @@ String[] Titel = new String[14];
 
 void load() {
   //indlæser navnene
-  Titel[0] = "Orange juice";
-  Titel[1] = "Drink 2";
-  Titel[2] = "Cosmopolitan";
-  Titel[3] = "Drink 4";
-  Titel[4] = "Drink 5";
-  Titel[5] = "Drink 6";
-  Titel[6] = "Drink 7";
-  Titel[7] = "Drink 8";
-  Titel[8] = "Drink 9";
-  Titel[9] = "Drink 10";
-  Titel[10] = "Drink 11";
-  Titel[11] = "Drink 12";
-  Titel[12] = "Drink 13";
-  Titel[13] = "clean that shit up";
+  Titel[0] = "æblejuice";
+  Titel[1] = "appelsinjuice";
+  Titel[2] = "Ice Tea";
+  Titel[3] = "æble-Tea";
+  Titel[4] = "appel-Tea";
+  Titel[5] = "æblejuice Plus";
+  Titel[6] = "Ice Tea plus";
+  Titel[7] = "Appelsinjuice Plus";
+  Titel[8] = "Æble-Sin-Tea";
+  Titel[9] = "Distilled Tea";
+  Titel[10] = "Æble-Sin-Tea Plus";
+  Titel[11] = "Vand";
+  Titel[12] = "Drain";
+  Titel[13] = "Clean that shit up";
   
-  drinks[0] = new int[]{2, 4, 0, 0, 0, 0, 0, 0, 0};
-  drinks[1] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[2] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[3] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[4] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[5] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[6] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[7] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[8] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[9] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[10] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[11] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[12] = new int[]{2, 2, 0, 0, 0, 0, 0, 0, 0};
-  drinks[13] = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5};  
+  drinks[0] = new int[]{0, 6, 0, 0, 0, 0, 0, 0, 0};
+  drinks[1] = new int[]{0, 0, 6, 0, 0, 0, 0, 0, 0};
+  drinks[2] = new int[]{0, 0, 0, 6, 0, 0, 0, 0, 0};
+  drinks[3] = new int[]{0, 6, 0, 6, 0, 0, 0, 0, 0};
+  drinks[4] = new int[]{0, 0, 6, 6, 0, 0, 0, 0, 0};
+  drinks[5] = new int[]{0, 9, 0, 0, 0, 0, 0, 0, 0};
+  drinks[6] = new int[]{0, 0, 0, 9, 0, 0, 0, 0, 0};
+  drinks[7] = new int[]{0, 0, 9, 0, 0, 0, 0, 0, 0};
+  drinks[8] = new int[]{0, 6, 6, 6, 0, 0, 0, 0, 0};
+  drinks[9] = new int[]{6, 0, 0, 6, 0, 0, 0, 0, 0};
+  drinks[10] = new int[]{0, 5, 5, 5, 0, 0, 0, 0, 0};
+  drinks[11] = new int[]{5, 0, 0, 0, 0, 0, 0, 0, 0};
+  drinks[12] = new int[]{3, 3, 3, 3, 3, 3, 3, 3, 3};
+  drinks[13] = new int[]{3, 3, 3, 3, 3, 3, 3, 3, 3};  
 
 }
 

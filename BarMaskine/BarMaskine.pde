@@ -21,7 +21,8 @@ Boolean error = false;
 String a = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet fringilla augue. Donec rutrum bibendum sapien et rhoncus. Quisque vel lorem in massa iaculis rhoncus ac at orci. Phasellus elit augue, mollis et elementum vel, sodales vel magna. Phasellus vehicula porta mi, pellentesque cursus libero pretium eu. Etiam placerat lectus at congue viverra. Aliquam erat volutpat. Suspendisse eget faucibus erat, vel sodales arcu. In sit amet ex ac leo ultrices porttitor. Cras est massa, feugiat ut sagittis et, suscipit sit amet lectus. Vivamus in semper sapien. Curabitur mi nisl, efficitur quis metus non, pharetra facilisis ipsum. Etiam pretium ante in vehicula luctus. Donec vitae tristique odio. Mauris urna felis, vulputate at nibh id, aliquam vulputate massa.";
 
 void setup() {
-  size(1366, 768);
+  //size(1366, 768);
+  fullScreen();
   frameRate(60);
   //vi loader vores billeder ved opstart hvilket reducere lag senere hen i programmet.
   Forside = loadImage("Forside.png");
@@ -35,7 +36,7 @@ void setup() {
   //vi loader drink billederne og skalere dem til de to nødvendige størrelser for vores program
   for (int d=0; d<bigdrinks.length; d++) {
     bigdrinks[d] = loadImage("data/"+"drink"+d+".png");
-    bigdrinks[d].resize(359, 541);
+    bigdrinks[d].resize(359, 525);
     smalldrinks[d] = loadImage("data/"+"drink"+d+".png");
     smalldrinks[d].resize(40, 40);
   }
@@ -90,7 +91,7 @@ void mousePressed() {
 
     if (index!=11&&mouseX>width-489&&mouseY>171&&mouseY<171+416&&mousePressed) {
       //scroll til højre
-      if (index!=0) {
+      if (index!=13) {
         index+=1;
       }
       println(index);
